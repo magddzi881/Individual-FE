@@ -155,6 +155,7 @@ Future<bool> editUser(User user) async {
     headers: actionHeaders,
     body: json.encode(userData),
   );
+  print(response.statusCode);
   if (response.statusCode == 200) {
     edited = true;
   } else {}

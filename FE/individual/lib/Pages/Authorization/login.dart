@@ -128,6 +128,7 @@ class _LoginPageState extends State<LoginPage> {
                           child: ElevatedButton(
                             onPressed: () async {
                               bool auth = await logIn(username, password);
+
                               if (auth == false) {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                     customSnackBar('Invalid login or password',

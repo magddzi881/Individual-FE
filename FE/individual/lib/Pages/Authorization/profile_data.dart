@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:individual/Database/email_db.dart';
 import 'package:individual/Database/user_db.dart';
 import 'package:individual/Models/user.dart';
 import 'package:individual/Pages/Authorization/login.dart';
@@ -209,6 +210,12 @@ class _ProfileDataPageState extends State<ProfileDataPage> {
                                                 SnackBarType.success,
                                                 context));
                                         addUser(user).then((value) {
+                                          sendNewUser({
+                                            "address": user.email,
+                                            "name": user.name,
+                                            "surname": user.surname,
+                                            "username": user.username
+                                          });
                                           navigatorReplacementWithAnimation(
                                               context,
                                               1.0,

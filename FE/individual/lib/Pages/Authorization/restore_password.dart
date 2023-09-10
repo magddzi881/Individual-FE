@@ -1,6 +1,7 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:flutter/material.dart';
+import 'package:individual/Database/email_db.dart';
 import 'package:individual/Database/user_db.dart';
 import 'package:individual/Models/user.dart';
 import 'package:individual/Pages/Authorization/login.dart';
@@ -144,13 +145,21 @@ class _RestorePasswordPageState extends State<RestorePasswordPage> {
                                       await restoreCheck(username, yearOfBirth);
                                   if (correctData == true) {
                                     User user = await getUser(username);
+                                    print(user.password);
                                     user.password = password;
+                                    print(user.password);
                                     await editUser(user);
                                     ScaffoldMessenger.of(context).showSnackBar(
                                         customSnackBar(
                                             'Password has been changed',
                                             SnackBarType.success,
                                             context));
+                                    sendChangedPassword({
+                                      "address": user.email,
+                                      "name": user.name,
+                                      "surname": user.surname,
+                                      "username": user.username
+                                    });
                                     navigatorReplacementWithAnimation(
                                         context,
                                         -1.0,
