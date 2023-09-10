@@ -4,15 +4,20 @@ import 'package:http/http.dart' as http;
 import 'package:individual/Models/user.dart';
 import 'package:individual/Utils/global_vars.dart';
 
-Future<bool> getUsers() async {
-  bool success;
+Future<List<String>> getUserUsernames() async {
+  final List<String> usernames = [];
   final response = await http.get(Uri.parse('$url/users'), headers: getHeaders);
+
   if (response.statusCode == 200) {
-    success = true;
-  } else {
-    success = false;
+    final List<dynamic> jsonData = json.decode(response.body);
+
+    for (var data in jsonData) {
+      final String username = data['username'];
+      usernames.add(username);
+    }
   }
-  return success;
+
+  return usernames;
 }
 
 Future<User> getUser(String username) async {

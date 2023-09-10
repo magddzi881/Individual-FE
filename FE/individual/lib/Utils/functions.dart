@@ -195,3 +195,7 @@ bool checkPrice(String price) {
 
   return true;
 }
+
+bool doesUsernameExist(String usernameToCheck, List<String> usernames) {
+  return usernames.contains(usernameToCheck);
+}

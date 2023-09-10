@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:individual/Database/user_db.dart';
 import 'package:individual/Pages/Authorization/login.dart';
 import 'package:individual/Pages/Authorization/profile_data.dart';
 import 'package:individual/Widgets/form_widgets.dart';
@@ -18,11 +19,21 @@ class _RegisterPageState extends State<RegisterPage> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController password2Controller = TextEditingController();
+  List<String> usernames = [];
   bool hideText = true;
   String username = '';
   String email = '';
   String password = '';
   String password2 = '';
+  @override
+  void initState() {
+    loadUsernames();
+    super.initState();
+  }
+
+  void loadUsernames() async {
+    usernames = await getUserUsernames();
+  }
 
   @override
   void dispose() {
@@ -131,25 +142,34 @@ class _RegisterPageState extends State<RegisterPage> {
                                         SnackBarType.error,
                                         context));
                               } else {
-                                if (password != password2) {
+                                if (doesUsernameExist(username, usernames) ==
+                                    true) {
                                   ScaffoldMessenger.of(context).showSnackBar(
                                       customSnackBar(
-                                          'Password fields are not the same',
+                                          'Username is already taken',
                                           SnackBarType.error,
                                           context));
                                 } else {
-                                  navigatorWithAnimation(
-                                      context,
-                                      1.0,
-                                      (context, animation,
-                                              secondaryAnimation) =>
-                                          const ProfileDataPage(),
-                                      {
-                                        'username': username,
-                                        'email': email,
-                                        'password': password,
-                                        'password2': password2
-                                      });
+                                  if (password != password2) {
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                        customSnackBar(
+                                            'Password fields are not the same',
+                                            SnackBarType.error,
+                                            context));
+                                  } else {
+                                    navigatorWithAnimation(
+                                        context,
+                                        1.0,
+                                        (context, animation,
+                                                secondaryAnimation) =>
+                                            const ProfileDataPage(),
+                                        {
+                                          'username': username,
+                                          'email': email,
+                                          'password': password,
+                                          'password2': password2
+                                        });
+                                  }
                                 }
                               }
                             },
