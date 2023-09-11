@@ -182,6 +182,7 @@ class _ChatPreviewState extends State<ChatPreview> {
                       addMessage(newMessage).then((value) {
                         widget.chat.lastlyViewed = widget.lastlyViewed;
                         editChat(widget.chat, message, newMessage.sendTime);
+                        editChatSeen(widget.chat.id, false);
                         setState(() {
                           _refreshChat();
                         });

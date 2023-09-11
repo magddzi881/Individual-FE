@@ -112,6 +112,7 @@ class _OffersPageState extends State<OffersPage> {
                       'Hi! I am interested in the offer "${data[i].title}" from ${data[i].category} category, can I ask you for more details';
                   Chat chat = Chat(
                       id: 0,
+                      seen: false,
                       user1: widget.user,
                       user2: data[i].tutor,
                       lastlyViewed: DateTime.now(),

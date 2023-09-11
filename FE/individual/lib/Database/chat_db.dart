@@ -29,6 +29,7 @@ Future<List<Chat>> getUsersChats(String username) async {
       Chat chat = Chat(
         id: chatData['id'],
         user1: user1,
+        seen: chatData['seen'],
         user2: user2,
         senderUsername: chatData['senderUsername'],
         lastMessageSendTime: DateTime.parse(chatData['lastMessageSendTime']),
@@ -72,6 +73,7 @@ Future<Chat> getChat(String username1, String username2) async {
         lastMessageSendTime: DateTime.parse(chatInfo['lastMessageSendTime']),
         user1: user1,
         user2: user2,
+        seen: chatInfo['seen'],
         senderUsername: chatInfo['senderUsername'],
         lastlyViewed: DateTime.parse(chatInfo['lastlyViewed']),
         lastMessageBetween: chatInfo['lastMessageBetween'],
@@ -83,6 +85,7 @@ Future<Chat> getChat(String username1, String username2) async {
   } else {
     return Chat(
         id: -1,
+        seen: false,
         lastMessageSendTime: DateTime.now(),
         user1: User(
             username: 'username',
@@ -122,6 +125,7 @@ Future<bool> addChat(Chat chat) async {
     'username2': chat.user2.username,
     'lastMessageBetween': chat.lastMessageBetween,
     'lastlyViewed': formattedDate,
+    'seen': chat.seen,
     'senderUsername': chat.senderUsername,
     'lastMessageSendTime': formattedLastMessageSendTime,
   };
@@ -149,6 +153,7 @@ Future<bool> editChat(
     'username2': chat.user2.username,
     'lastMessageBetween': lastMessage,
     'lastlyViewed': formattedDate,
+    'seen': chat.seen,
     'senderUsername': chat.senderUsername,
     'lastMessageSendTime': formattedLastMessageSendTime,
   };
@@ -164,19 +169,16 @@ Future<bool> editChat(
   }
 }
 
-Future<bool> editChatLastlyViewed(
-    Chat chat, String lastMessage, DateTime messageTime) async {
-  String formattedDate =
-      "${chat.lastlyViewed.year}-${twoDigits(chat.lastlyViewed.month)}-${twoDigits(chat.lastlyViewed.day)} ${twoDigits(chat.lastlyViewed.hour)}:${twoDigits(chat.lastlyViewed.minute)}:${twoDigits(chat.lastlyViewed.second)}";
-
-  final Map<String, dynamic> userData = {
-    'lastlyViewed': formattedDate,
+Future<bool> editChatSeen(int id, bool seen) async {
+  final Map<String, dynamic> chatData = {
+    'seen': seen,
   };
   final response = await http.patch(
-    Uri.parse('$url/chats/${chat.id}'),
+    Uri.parse('$url/chats/updateChatSeen?id=$id&seen=$seen'),
     headers: actionHeaders,
-    body: json.encode(userData),
+    body: json.encode(chatData),
   );
+
   if (response.statusCode == 200) {
     return true;
   } else {

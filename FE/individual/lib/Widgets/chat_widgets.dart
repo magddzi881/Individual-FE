@@ -27,14 +27,12 @@ class ChatTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final double height = MediaQuery.of(context).size.height;
     final double width = MediaQuery.of(context).size.width;
-    final seen = hasUserSeenMessage(chat, loggedUser);
+    final bool seen = !chat.seen && loggedUser == chat.senderUsername;
 
     return GestureDetector(
       onTap: () {
-        if (seen == true) {
-          chat.lastlyViewed = DateTime.now();
-          editChatLastlyViewed(
-              chat, chat.lastMessageBetween, chat.lastMessageSendTime);
+        if (loggedUser == chat.senderUsername) {
+          editChatSeen(chat.id, true);
         }
         Navigator.push(
             context,
