@@ -120,7 +120,7 @@ class _HomeState extends State<Home> {
                               title: 'Biology',
                               function: () async {
                                 navigatorCategories(widget.user, context,
-                                    category: 'Mathematics');
+                                    category: 'Biology');
                               },
                             ),
                             CustomTile(

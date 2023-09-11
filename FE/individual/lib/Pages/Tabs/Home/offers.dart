@@ -119,7 +119,11 @@ class _OffersPageState extends State<OffersPage> {
                       senderUsername: data[i].tutor.username,
                       lastMessageSendTime: DateTime.now(),
                       lastMessageBetween: exampleMessage);
+                  Chat tempChat = await getChat(
+                      widget.user.username, data[i].tutor.username);
+                  int chatId = tempChat.id;
                   Message message = Message(
+                      chatId: chatId,
                       id: 0,
                       sendTime: DateTime.now(),
                       text: exampleMessage,

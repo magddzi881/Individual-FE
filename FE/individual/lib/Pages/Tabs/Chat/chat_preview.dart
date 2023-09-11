@@ -174,6 +174,7 @@ class _ChatPreviewState extends State<ChatPreview> {
                     showLabel: false,
                     searchFunction: () {
                       Message newMessage = Message(
+                          chatId: widget.chat.id,
                           id: 0,
                           sendTime: DateTime.now(),
                           text: message,
