@@ -212,6 +212,7 @@ class _AddOfferPageState extends State<AddOfferPage> {
                     'IT',
                     'Language',
                     'Literature',
+                    'Art',
                     'Other',
                   ],
                   controller: categoryController,

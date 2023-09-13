@@ -131,6 +131,13 @@ class _HomeState extends State<Home> {
                               },
                             ),
                             CustomTile(
+                              title: 'Art',
+                              function: () async {
+                                navigatorCategories(widget.user, context,
+                                    category: 'Art');
+                              },
+                            ),
+                            CustomTile(
                               title: 'Geography',
                               function: () async {
                                 navigatorCategories(widget.user, context,

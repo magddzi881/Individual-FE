@@ -127,6 +127,8 @@ class _LoginPageState extends State<LoginPage> {
                           alignment: Alignment.centerRight,
                           child: ElevatedButton(
                             onPressed: () async {
+                              username = 'user1';
+                              password = '1';
                               bool auth = await logIn(username, password);
 
                               if (auth == false) {

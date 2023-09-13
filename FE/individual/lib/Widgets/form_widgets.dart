@@ -197,6 +197,101 @@ class IconLongTextField extends StatelessWidget {
   }
 }
 
+class IconLongerTextField extends StatelessWidget {
+  const IconLongerTextField(
+      {super.key,
+      required this.controller,
+      required this.icon,
+      required this.function,
+      this.textInputType = TextInputType.name,
+      this.hintText = '',
+      this.showLabel = true});
+  final TextEditingController controller;
+  final IconData icon;
+  final String hintText;
+  final void Function(String) function;
+  final TextInputType textInputType;
+  final bool showLabel;
+
+  @override
+  Widget build(BuildContext context) {
+    final double width = MediaQuery.of(context).size.width;
+    final double height = MediaQuery.of(context).size.height;
+    return Container(
+      alignment: Alignment.center,
+      height: height * 0.6,
+      width: width * 0.8,
+      child: Column(
+        children: [
+          Container(
+            alignment: Alignment.centerLeft,
+            height: height * 0.04,
+            width: width * 0.77,
+            child: Text(
+              (showLabel == true) ? hintText : '',
+              style: TextStyle(
+                fontSize: height * 0.018,
+              ),
+            ),
+          ),
+          SizedBox(
+            height: height * 0.008,
+          ),
+          Container(
+            height: height * 0.55,
+            alignment: Alignment.center,
+            width: width * 0.8,
+            child: Card(
+              shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(10))),
+              elevation: 5,
+              semanticContainer: true,
+              child: Row(
+                children: [
+                  SizedBox(
+                    height: height * 0.06,
+                    width: width * 0.02,
+                  ),
+                  SizedBox(
+                    height: height * 0.17,
+                    width: width * 0.065,
+                    child: Icon(
+                      icon,
+                      size: height * 0.03,
+                    ),
+                  ),
+                  SizedBox(
+                    height: height * 0.065,
+                    width: width * 0.015,
+                  ),
+                  SizedBox(
+                    height: height * 0.52,
+                    width: width * 0.67,
+                    child: TextField(
+                      keyboardType: textInputType,
+                      autocorrect: true,
+                      onChanged: function,
+                      onSubmitted: function,
+                      controller: controller,
+                      decoration: InputDecoration(
+                        counterText: '',
+                        border: InputBorder.none,
+                        hintText: hintText,
+                        hintStyle: TextStyle(
+                            fontSize: height * 0.018, color: Colors.black),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 class IconPasswordTextField extends StatefulWidget {
   const IconPasswordTextField(
       {super.key,

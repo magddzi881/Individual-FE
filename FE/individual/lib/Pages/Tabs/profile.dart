@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:individual/Models/user.dart';
 import 'package:individual/Pages/Tabs/Profile/edit_profile.dart';
+import 'package:individual/Pages/Tabs/Profile/study_materials.dart';
 import 'package:individual/Pages/Tabs/Profile/my_offers.dart';
 import 'package:individual/Widgets/immutable_widgets.dart';
 import 'package:individual/Widgets/profile_widgets.dart';
@@ -82,62 +83,95 @@ class _ProfileState extends State<Profile> {
                       borderRadius: BorderRadius.only(
                           topRight: Radius.circular(30),
                           topLeft: Radius.circular(30))),
-                  child: Container(
-                    height: height * 0.4,
-                    width: width * 0.8,
-                    alignment: Alignment.center,
-                    child: Column(
-                      children: [
-                        SizedBox(
-                          height: height * 0.04,
-                        ),
-                        CustomProfileTile(
-                          function: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => EditProfile(
-                                        user: user,
-                                      )),
-                            );
-                          },
-                          title: 'Edit Profile',
-                        ),
-                        SizedBox(
-                          height: height * 0.01,
-                        ),
-                        CustomProfileTile(
-                          function: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => MyOffers(
-                                        user: user,
-                                      )),
-                            );
-                          },
-                          title: 'My Offers',
-                        ),
-                        SizedBox(
-                          height: height * 0.01,
-                        ),
-                        CustomProfileTile(
-                          title: 'Help & About',
-                          function: () {
-                            Navigator.of(context).pushNamed('/help');
-                          },
-                        ),
-                        SizedBox(
-                          height: height * 0.01,
-                        ),
-                        CustomProfileTile(
-                          function: () {
-                            Navigator.of(context).pushNamedAndRemoveUntil(
-                                '/login', (route) => false);
-                          },
-                          title: 'Log Out',
-                        ),
-                      ],
+                  child: SingleChildScrollView(
+                    child: Container(
+                      height: height * 0.7,
+                      width: width * 0.8,
+                      alignment: Alignment.center,
+                      child: Column(
+                        children: [
+                          SizedBox(
+                            height: height * 0.04,
+                          ),
+                          CustomProfileTile(
+                            function: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => EditProfile(
+                                          user: user,
+                                        )),
+                              );
+                            },
+                            title: 'Edit Profile',
+                          ),
+                          SizedBox(
+                            height: height * 0.01,
+                          ),
+                          CustomProfileTile(
+                            function: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => MyOffers(
+                                          user: user,
+                                        )),
+                              );
+                            },
+                            title: 'My Offers',
+                          ),
+                          SizedBox(
+                            height: height * 0.01,
+                          ),
+                          CustomProfileTile(
+                            title: 'Accessible Materials',
+                            function: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => MaterialsPage(
+                                          user: user,
+                                        )),
+                              );
+                            },
+                          ),
+                          SizedBox(
+                            height: height * 0.01,
+                          ),
+                          CustomProfileTile(
+                            title: 'My Shared Materials',
+                            function: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => MaterialsPage(
+                                          user: user,
+                                          shared: true,
+                                        )),
+                              );
+                            },
+                          ),
+                          SizedBox(
+                            height: height * 0.01,
+                          ),
+                          CustomProfileTile(
+                            title: 'Help & About',
+                            function: () {
+                              Navigator.of(context).pushNamed('/help');
+                            },
+                          ),
+                          SizedBox(
+                            height: height * 0.01,
+                          ),
+                          CustomProfileTile(
+                            function: () {
+                              Navigator.of(context).pushNamedAndRemoveUntil(
+                                  '/login', (route) => false);
+                            },
+                            title: 'Log Out',
+                          ),
+                        ],
+                      ),
                     ),
                   )),
             ),

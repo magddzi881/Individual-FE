@@ -53,7 +53,13 @@ class CategorySwitch extends StatelessWidget {
       case 'Science':
         {
           color = Colors.blue;
-          icon = Icons.line_axis_rounded;
+          icon = Icons.precision_manufacturing_outlined;
+        }
+        break;
+      case 'Art':
+        {
+          color = Colors.blueGrey;
+          icon = Icons.format_paint_outlined;
         }
         break;
       case 'History':
@@ -122,9 +128,21 @@ class CategorySwitch extends StatelessWidget {
           icon = Icons.local_offer_outlined;
         }
         break;
-      case 'Help & About':
+      case 'My Shared Materials':
         {
           color = Colors.blue;
+          icon = Icons.folder_shared_outlined;
+        }
+        break;
+      case 'Accessible Materials':
+        {
+          color = Colors.green;
+          icon = Icons.share_outlined;
+        }
+        break;
+      case 'Help & About':
+        {
+          color = Colors.indigo;
           icon = Icons.info_outlined;
         }
         break;

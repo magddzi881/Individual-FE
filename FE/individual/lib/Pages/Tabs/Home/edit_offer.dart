@@ -220,6 +220,7 @@ class _EditOfferPageState extends State<EditOfferPage> {
                     'IT',
                     'Language',
                     'Literature',
+                    'Art',
                     'Other',
                   ],
                   controller: categoryController,
