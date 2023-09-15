@@ -86,7 +86,7 @@ class StudyMaterialCard extends StatelessWidget {
                     ),
                   ),
                   Container(
-                      color: background,
+                      color: backgroundColor,
                       width: width * 0.85,
                       height: height * 0.001),
                   SizedBox(
@@ -118,7 +118,7 @@ class StudyMaterialCard extends StatelessWidget {
                         }
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.deepPurpleAccent,
+                        backgroundColor: mainColor,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10.0),
                         ),
@@ -295,7 +295,7 @@ class StudyMaterialCardOwner extends StatelessWidget {
                     ),
                   ),
                   Container(
-                      color: background,
+                      color: backgroundColor,
                       width: width * 0.85,
                       height: height * 0.001),
                   SizedBox(
@@ -318,7 +318,7 @@ class StudyMaterialCardOwner extends StatelessWidget {
                             );
                           },
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.deepPurpleAccent,
+                            backgroundColor: mainColor,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10.0),
                             ),
@@ -375,7 +375,7 @@ class StudyMaterialCardOwner extends StatelessWidget {
                             }
                           },
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.deepPurpleAccent,
+                            backgroundColor: mainColor,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10.0),
                             ),

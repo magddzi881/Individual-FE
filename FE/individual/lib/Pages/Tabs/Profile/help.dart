@@ -28,7 +28,7 @@ class HelpTab extends StatelessWidget {
     final double width = MediaQuery.of(context).size.width;
     final double height = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: background,
+      backgroundColor: backgroundColor,
       bottomNavigationBar: ButtonBack(function: () {
         Navigator.of(context).pop();
       }),

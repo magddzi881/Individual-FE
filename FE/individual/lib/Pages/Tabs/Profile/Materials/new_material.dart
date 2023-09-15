@@ -65,7 +65,7 @@ class _NewMaterialPageState extends State<NewMaterialPage> {
             navigatorBack: () {
               Navigator.of(context).pop();
             }),
-        backgroundColor: background,
+        backgroundColor: backgroundColor,
         body: SingleChildScrollView(
           child: Column(children: [
             const IndividualLogo(),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:individual/Utils/global_vars.dart';
 
 class IconTextField extends StatelessWidget {
   const IconTextField(
@@ -397,7 +398,7 @@ class _IconPasswordTextFieldState extends State<IconPasswordTextField> {
                           icon: Icon(
                             Icons.remove_red_eye_outlined,
                             size: height * 0.03,
-                            color: Colors.deepPurpleAccent,
+                            color: mainColor,
                           ))),
                 ],
               ),
@@ -480,7 +481,7 @@ class SearchTextField extends StatelessWidget {
                       icon: Icon(
                         Icons.search,
                         size: height * 0.03,
-                        color: Colors.deepPurpleAccent,
+                        color: mainColor,
                       ))
                 ],
               ),
@@ -565,7 +566,7 @@ class ButtonTextField extends StatelessWidget {
                       icon: Icon(
                         Icons.send_outlined,
                         size: height * 0.03,
-                        color: Colors.deepPurpleAccent,
+                        color: mainColor,
                       ))
                 ],
               ),

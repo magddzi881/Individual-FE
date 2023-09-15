@@ -1,6 +1,7 @@
 // ignore_for_file: use_build_context_synchronously, must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:individual/Utils/global_vars.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 class Loading extends StatelessWidget {
@@ -11,7 +12,7 @@ class Loading extends StatelessWidget {
     final double height = MediaQuery.of(context).size.height;
     return Center(
         child: LoadingAnimationWidget.newtonCradle(
-      color: Colors.deepPurpleAccent,
+      color: mainColor,
       size: height * 0.2,
     ));
   }
@@ -53,8 +54,9 @@ class ParagraptText extends StatelessWidget {
 }
 
 class IndividualLogo extends StatelessWidget {
-  const IndividualLogo({super.key, this.color = Colors.deepPurpleAccent});
-  final Color color;
+  const IndividualLogo({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +76,7 @@ class IndividualLogo extends StatelessWidget {
                   'I N D I V I D U A L',
                   style: TextStyle(
                       fontSize: height * 0.022,
-                      color: color,
+                      color: mainColor,
                       fontWeight: FontWeight.bold),
                 ),
               ),

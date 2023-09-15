@@ -30,7 +30,7 @@ class _ProfileState extends State<Profile> {
     final double height = MediaQuery.of(context).size.height;
     final double width = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: background,
+      backgroundColor: backgroundColor,
       body: Stack(children: [
         const IndividualLogo(),
         Column(
@@ -46,7 +46,7 @@ class _ProfileState extends State<Profile> {
                   ),
                   CircleAvatar(
                     radius: height * 0.09,
-                    backgroundColor: background,
+                    backgroundColor: backgroundColor,
                     child: Image.asset('assets/${user.avatarIndex}.png'),
                   ),
                   SizedBox(

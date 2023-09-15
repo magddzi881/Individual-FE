@@ -30,7 +30,7 @@ class _QuizScorePageState extends State<QuizScorePage> {
     final double height = MediaQuery.of(context).size.height;
     final double width = MediaQuery.of(context).size.width;
     return Scaffold(
-        backgroundColor: background,
+        backgroundColor: backgroundColor,
         bottomNavigationBar: ButtonOneOptionNoBack(
             function: () {
               Navigator.push(
@@ -65,7 +65,7 @@ class _QuizScorePageState extends State<QuizScorePage> {
                       fontWeight: FontWeight.bold, fontSize: height * 0.024),
                 ),
                 circularStrokeCap: CircularStrokeCap.round,
-                progressColor: Colors.deepPurpleAccent,
+                progressColor: mainColor,
               ),
             ),
           ),

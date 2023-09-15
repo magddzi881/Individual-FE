@@ -56,7 +56,7 @@ class _MaterialsPageState extends State<MaterialsPage> {
     final double height = MediaQuery.of(context).size.height;
     final double width = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: background,
+      backgroundColor: backgroundColor,
       bottomNavigationBar: (widget.shared == false)
           ? ButtonBack(function: () {
               Navigator.pushReplacement(
@@ -64,7 +64,7 @@ class _MaterialsPageState extends State<MaterialsPage> {
                 MaterialPageRoute(
                     builder: (context) => MenuPage(
                           user: widget.user,
-                          selectedIndex: 2,
+                          selectedIndex: 3,
                         )),
               );
             })
@@ -85,7 +85,7 @@ class _MaterialsPageState extends State<MaterialsPage> {
                   MaterialPageRoute(
                       builder: (context) => MenuPage(
                             user: widget.user,
-                            selectedIndex: 2,
+                            selectedIndex: 3,
                           )),
                 );
               }),

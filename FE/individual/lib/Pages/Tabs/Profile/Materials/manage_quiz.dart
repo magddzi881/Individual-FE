@@ -89,7 +89,7 @@ class _ManageQuizPageState extends State<ManageQuizPage> {
             navigatorBack: () {
               Navigator.of(context).pop();
             }),
-        backgroundColor: background,
+        backgroundColor: backgroundColor,
         body: SingleChildScrollView(
           child: Column(children: [
             const IndividualLogo(),

@@ -21,24 +21,36 @@ class ChatTile extends StatelessWidget {
       required this.loggedUser});
   Chat chat;
   final String messageSendTime;
-  final String loggedUser;
+  final User loggedUser;
 
   @override
   Widget build(BuildContext context) {
     final double height = MediaQuery.of(context).size.height;
     final double width = MediaQuery.of(context).size.width;
-    final bool seen = !chat.seen && loggedUser == chat.senderUsername;
-
+    bool seen = true;
+    bool senderIsLogged = chat.senderUsername == loggedUser.username;
+    if (senderIsLogged) {
+      seen == true;
+    } else {
+      if (chat.seen == true) {
+        seen = true;
+      } else {
+        seen = false;
+      }
+    }
     return GestureDetector(
-      onTap: () {
-        if (loggedUser == chat.senderUsername) {
-          editChatSeen(chat.id, true);
+      onTap: () async {
+        if (loggedUser.username != chat.senderUsername) {
+          await editChatSeen(chat.id, true);
         }
         Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) =>
-                    ChatPreview(chat: chat, lastlyViewed: chat.lastlyViewed)));
+                builder: (context) => ChatPreview(
+                      chat: chat,
+                      lastlyViewed: chat.lastlyViewed,
+                      loggedUser: loggedUser,
+                    )));
       },
       child: SizedBox(
         width: width * 0.95,
@@ -87,7 +99,7 @@ class ChatTile extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                           fontSize: height * 0.018,
-                          color: (seen == true) ? Colors.black : Colors.grey,
+                          color: (seen == false) ? Colors.black : Colors.grey,
                         )),
                   )
                 ],
@@ -110,13 +122,11 @@ class ChatTile extends StatelessWidget {
                   Row(
                     children: [
                       Icon(
-                          (seen == true)
+                          (seen == false)
                               ? Icons.sms_outlined
                               : Icons.done_all_outlined,
                           size: height * 0.025,
-                          color: (seen == true)
-                              ? Colors.amber
-                              : Colors.deepPurpleAccent),
+                          color: (seen == false) ? Colors.amber : mainColor),
                     ],
                   )
                 ],
@@ -135,12 +145,11 @@ class ChatTile extends StatelessWidget {
 class IndividualLogoWithAvatar extends StatelessWidget {
   IndividualLogoWithAvatar(
       {super.key,
-      this.color = Colors.deepPurpleAccent,
       required this.user1,
       required this.chat,
       this.rating = 5,
       required this.user2});
-  final Color color;
+
   final User user1;
   final User user2;
   double rating;
@@ -169,7 +178,7 @@ class IndividualLogoWithAvatar extends StatelessWidget {
                               MaterialPageRoute(
                                   builder: (context) => MenuPage(
                                         user: user1,
-                                        selectedIndex: 1,
+                                        selectedIndex: 2,
                                       )));
                         },
                         icon: Icon(
@@ -178,7 +187,7 @@ class IndividualLogoWithAvatar extends StatelessWidget {
                           color: Colors.black,
                         )),
                     CircleAvatar(
-                        backgroundColor: background,
+                        backgroundColor: backgroundColor,
                         radius: height * 0.03,
                         child: Image.asset('assets/${user2.avatarIndex}.png')),
                     TextButton(
@@ -246,8 +255,7 @@ class IndividualLogoWithAvatar extends StatelessWidget {
                                                           context)));
                                             },
                                             style: ElevatedButton.styleFrom(
-                                              backgroundColor:
-                                                  Colors.deepPurpleAccent,
+                                              backgroundColor: mainColor,
                                               shape: RoundedRectangleBorder(
                                                 borderRadius:
                                                     BorderRadius.circular(10.0),
@@ -296,7 +304,7 @@ class IndividualLogoWithAvatar extends StatelessWidget {
                   'I N D I V I D U A L',
                   style: TextStyle(
                       fontSize: height * 0.022,
-                      color: color,
+                      color: mainColor,
                       fontWeight: FontWeight.bold),
                 ),
               ),

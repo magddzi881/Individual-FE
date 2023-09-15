@@ -30,9 +30,8 @@ class _AvatarGalleryState extends State<AvatarGallery> {
               },
               child: CircleAvatar(
                 radius: height * 0.05,
-                backgroundColor: (widget.avatarIndex == 1)
-                    ? Colors.deepPurpleAccent
-                    : background,
+                backgroundColor:
+                    (widget.avatarIndex == 1) ? mainColor : backgroundColor,
                 child: Image.asset('assets/1.png'),
               ),
             ),
@@ -45,9 +44,8 @@ class _AvatarGalleryState extends State<AvatarGallery> {
               },
               child: CircleAvatar(
                 radius: height * 0.05,
-                backgroundColor: (widget.avatarIndex == 2)
-                    ? Colors.deepPurpleAccent
-                    : background,
+                backgroundColor:
+                    (widget.avatarIndex == 2) ? mainColor : backgroundColor,
                 child: Image.asset('assets/2.png'),
               ),
             ),
@@ -60,9 +58,8 @@ class _AvatarGalleryState extends State<AvatarGallery> {
               },
               child: CircleAvatar(
                 radius: height * 0.05,
-                backgroundColor: (widget.avatarIndex == 3)
-                    ? Colors.deepPurpleAccent
-                    : background,
+                backgroundColor:
+                    (widget.avatarIndex == 3) ? mainColor : backgroundColor,
                 child: Image.asset('assets/3.png'),
               ),
             ),
@@ -75,9 +72,8 @@ class _AvatarGalleryState extends State<AvatarGallery> {
               },
               child: CircleAvatar(
                 radius: height * 0.05,
-                backgroundColor: (widget.avatarIndex == 4)
-                    ? Colors.deepPurpleAccent
-                    : background,
+                backgroundColor:
+                    (widget.avatarIndex == 4) ? mainColor : backgroundColor,
                 child: Image.asset('assets/4.png'),
               ),
             ),
@@ -95,9 +91,8 @@ class _AvatarGalleryState extends State<AvatarGallery> {
               },
               child: CircleAvatar(
                 radius: height * 0.05,
-                backgroundColor: (widget.avatarIndex == 5)
-                    ? Colors.deepPurpleAccent
-                    : background,
+                backgroundColor:
+                    (widget.avatarIndex == 5) ? mainColor : backgroundColor,
                 child: Image.asset('assets/5.png'),
               ),
             ),
@@ -110,9 +105,8 @@ class _AvatarGalleryState extends State<AvatarGallery> {
               },
               child: CircleAvatar(
                 radius: height * 0.05,
-                backgroundColor: (widget.avatarIndex == 6)
-                    ? Colors.deepPurpleAccent
-                    : background,
+                backgroundColor:
+                    (widget.avatarIndex == 6) ? mainColor : backgroundColor,
                 child: Image.asset('assets/6.png'),
               ),
             ),
@@ -125,9 +119,8 @@ class _AvatarGalleryState extends State<AvatarGallery> {
               },
               child: CircleAvatar(
                 radius: height * 0.05,
-                backgroundColor: (widget.avatarIndex == 7)
-                    ? Colors.deepPurpleAccent
-                    : background,
+                backgroundColor:
+                    (widget.avatarIndex == 7) ? mainColor : backgroundColor,
                 child: Image.asset('assets/7.png'),
               ),
             ),
@@ -140,9 +133,8 @@ class _AvatarGalleryState extends State<AvatarGallery> {
               },
               child: CircleAvatar(
                 radius: height * 0.05,
-                backgroundColor: (widget.avatarIndex == 8)
-                    ? Colors.deepPurpleAccent
-                    : background,
+                backgroundColor:
+                    (widget.avatarIndex == 8) ? mainColor : backgroundColor,
                 child: Image.asset('assets/8.png'),
               ),
             ),
@@ -160,9 +152,8 @@ class _AvatarGalleryState extends State<AvatarGallery> {
               },
               child: CircleAvatar(
                 radius: height * 0.05,
-                backgroundColor: (widget.avatarIndex == 9)
-                    ? Colors.deepPurpleAccent
-                    : background,
+                backgroundColor:
+                    (widget.avatarIndex == 9) ? mainColor : backgroundColor,
                 child: Image.asset('assets/9.png', fit: BoxFit.contain),
               ),
             ),
@@ -175,9 +166,8 @@ class _AvatarGalleryState extends State<AvatarGallery> {
               },
               child: CircleAvatar(
                 radius: height * 0.05,
-                backgroundColor: (widget.avatarIndex == 10)
-                    ? Colors.deepPurpleAccent
-                    : background,
+                backgroundColor:
+                    (widget.avatarIndex == 10) ? mainColor : backgroundColor,
                 child: Image.asset('assets/10.png'),
               ),
             ),
@@ -190,9 +180,8 @@ class _AvatarGalleryState extends State<AvatarGallery> {
               },
               child: CircleAvatar(
                 radius: height * 0.05,
-                backgroundColor: (widget.avatarIndex == 11)
-                    ? Colors.deepPurpleAccent
-                    : background,
+                backgroundColor:
+                    (widget.avatarIndex == 11) ? mainColor : backgroundColor,
                 child: Image.asset('assets/11.png'),
               ),
             ),
@@ -205,9 +194,8 @@ class _AvatarGalleryState extends State<AvatarGallery> {
               },
               child: CircleAvatar(
                 radius: height * 0.05,
-                backgroundColor: (widget.avatarIndex == 12)
-                    ? Colors.deepPurpleAccent
-                    : background,
+                backgroundColor:
+                    (widget.avatarIndex == 12) ? mainColor : backgroundColor,
                 child: Image.asset('assets/12.png'),
               ),
             ),

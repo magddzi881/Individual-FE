@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:individual/Utils/global_vars.dart';
 
 class ButtonOneOption extends StatelessWidget {
   const ButtonOneOption(
@@ -46,7 +47,7 @@ class ButtonOneOption extends StatelessWidget {
                   child: ElevatedButton(
                     onPressed: function,
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.deepPurpleAccent,
+                      backgroundColor: mainColor,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10.0),
                       ),
@@ -116,7 +117,7 @@ class ButtonOneOptionNoBack extends StatelessWidget {
                   child: ElevatedButton(
                     onPressed: function,
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.deepPurpleAccent,
+                      backgroundColor: mainColor,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10.0),
                       ),
@@ -199,7 +200,7 @@ class ButtonTwoOptions extends StatelessWidget {
                   child: ElevatedButton(
                     onPressed: function,
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.deepPurpleAccent,
+                      backgroundColor: mainColor,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10.0),
                       ),
@@ -230,7 +231,7 @@ class ButtonTwoOptions extends StatelessWidget {
                   child: ElevatedButton(
                     onPressed: function2,
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.deepPurpleAccent,
+                      backgroundColor: mainColor,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10.0),
                       ),

@@ -79,7 +79,7 @@ class _MyOffersState extends State<MyOffers> {
     final double height = MediaQuery.of(context).size.height;
     final double width = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: background,
+      backgroundColor: backgroundColor,
       bottomNavigationBar: ButtonOneOption(
           navigatorBack: () {
             Navigator.pushReplacement(
@@ -87,7 +87,7 @@ class _MyOffersState extends State<MyOffers> {
               MaterialPageRoute(
                   builder: (context) => MenuPage(
                         user: widget.user,
-                        selectedIndex: 2,
+                        selectedIndex: 3,
                       )),
             );
           },

@@ -104,6 +104,7 @@ class _OffersPageState extends State<OffersPage> {
                       context,
                       MaterialPageRoute(
                           builder: (context) => ChatPreview(
+                                loggedUser: widget.user,
                                 chat: dataChat,
                                 lastlyViewed: dataChat.lastlyViewed,
                               )));
@@ -134,6 +135,7 @@ class _OffersPageState extends State<OffersPage> {
                           context,
                           MaterialPageRoute(
                               builder: (context) => ChatPreview(
+                                    loggedUser: widget.user,
                                     chat: chat,
                                     lastlyViewed: chat.lastlyViewed,
                                   )))));
@@ -170,7 +172,7 @@ class _OffersPageState extends State<OffersPage> {
                             fromProfile: false,
                           )));
             }),
-        backgroundColor: background,
+        backgroundColor: backgroundColor,
         body: Column(
           children: [
             const IndividualLogo(),

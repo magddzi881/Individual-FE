@@ -90,7 +90,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         IconPasswordTextField(
                           controller: passwordController,
-                          icon: Icons.lock_outline,
+                          icon: Icons.lock_open_outlined,
                           hintText: 'Password',
                           function: (_) {
                             setState(() {
@@ -116,8 +116,7 @@ class _LoginPageState extends State<LoginPage> {
                               child: Text(
                                 'Forgot password?',
                                 style: TextStyle(
-                                    color: Colors.deepPurpleAccent,
-                                    fontSize: height * 0.017),
+                                    color: mainColor, fontSize: height * 0.017),
                               ),
                             )),
                         SizedBox(
@@ -127,8 +126,6 @@ class _LoginPageState extends State<LoginPage> {
                           alignment: Alignment.centerRight,
                           child: ElevatedButton(
                             onPressed: () async {
-                              username = 'user1';
-                              password = '1';
                               bool auth = await logIn(username, password);
 
                               if (auth == false) {
@@ -167,7 +164,7 @@ class _LoginPageState extends State<LoginPage> {
                               }
                             },
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.deepPurpleAccent,
+                              backgroundColor: mainColor,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
@@ -231,8 +228,7 @@ class _LoginPageState extends State<LoginPage> {
                           child: Text(
                             'Sign up',
                             style: TextStyle(
-                                fontSize: height * 0.018,
-                                color: Colors.deepPurpleAccent),
+                                fontSize: height * 0.018, color: mainColor),
                           ),
                         )
                       ],

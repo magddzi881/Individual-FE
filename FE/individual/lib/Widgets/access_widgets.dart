@@ -103,7 +103,7 @@ class AccessTile extends StatelessWidget {
                                 : "Delete access",
                             style: TextStyle(
                                 color: (hasAccess == false)
-                                    ? Colors.deepPurpleAccent
+                                    ? mainColor
                                     : Colors.red,
                                 fontSize: height * 0.017,
                                 fontWeight: FontWeight.bold)),

@@ -96,7 +96,7 @@ class _RestorePasswordPageState extends State<RestorePasswordPage> {
                         ),
                         IconPasswordTextField(
                           controller: passwordController,
-                          icon: Icons.email_outlined,
+                          icon: Icons.lock_open_outlined,
                           hintText: 'New Password',
                           function: (_) {
                             setState(() {
@@ -109,7 +109,7 @@ class _RestorePasswordPageState extends State<RestorePasswordPage> {
                         ),
                         IconPasswordTextField(
                           controller: password2Controller,
-                          icon: Icons.email_outlined,
+                          icon: Icons.lock_open_outlined,
                           hintText: 'Confirm New Password',
                           function: (_) {
                             setState(() {
@@ -178,7 +178,7 @@ class _RestorePasswordPageState extends State<RestorePasswordPage> {
                               }
                             },
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.deepPurpleAccent,
+                              backgroundColor: mainColor,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
@@ -242,8 +242,7 @@ class _RestorePasswordPageState extends State<RestorePasswordPage> {
                           child: Text(
                             'Sign up',
                             style: TextStyle(
-                                fontSize: height * 0.018,
-                                color: Colors.deepPurpleAccent),
+                                fontSize: height * 0.018, color: mainColor),
                           ),
                         )
                       ],

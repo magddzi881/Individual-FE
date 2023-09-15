@@ -104,7 +104,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         ),
                         IconPasswordTextField(
                           controller: passwordController,
-                          icon: Icons.lock_outline,
+                          icon: Icons.lock_open_outlined,
                           hintText: 'Password',
                           function: (_) {
                             setState(() {
@@ -117,7 +117,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         ),
                         IconPasswordTextField(
                           controller: password2Controller,
-                          icon: Icons.lock_outline,
+                          icon: Icons.lock_open_outlined,
                           hintText: 'Confirm Password',
                           function: (_) {
                             setState(() {
@@ -174,7 +174,7 @@ class _RegisterPageState extends State<RegisterPage> {
                               }
                             },
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.deepPurpleAccent,
+                              backgroundColor: mainColor,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
@@ -235,8 +235,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           child: Text(
                             'Sign in',
                             style: TextStyle(
-                                fontSize: height * 0.018,
-                                color: Colors.deepPurpleAccent),
+                                fontSize: height * 0.018, color: mainColor),
                           ),
                         )
                       ],

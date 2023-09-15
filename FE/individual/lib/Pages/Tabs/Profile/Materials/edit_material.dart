@@ -84,7 +84,7 @@ class _EditMaterialPageState extends State<EditMaterialPage> {
                         )),
               );
             }),
-        backgroundColor: background,
+        backgroundColor: backgroundColor,
         body: SingleChildScrollView(
           child: Column(children: [
             const IndividualLogo(),

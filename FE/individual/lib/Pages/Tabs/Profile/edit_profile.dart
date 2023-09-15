@@ -60,7 +60,7 @@ class _EditProfileState extends State<EditProfile> {
   Widget build(BuildContext context) {
     final double height = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: background,
+      backgroundColor: backgroundColor,
       bottomNavigationBar: ButtonOneOption(
           navigatorBack: () {
             Navigator.pushReplacement(
@@ -68,7 +68,7 @@ class _EditProfileState extends State<EditProfile> {
               MaterialPageRoute(
                   builder: (context) => MenuPage(
                         user: user,
-                        selectedIndex: 2,
+                        selectedIndex: 3,
                       )),
             );
           },
@@ -105,7 +105,7 @@ class _EditProfileState extends State<EditProfile> {
                           MaterialPageRoute(
                               builder: (context) => MenuPage(
                                     user: user,
-                                    selectedIndex: 2,
+                                    selectedIndex: 3,
                                   )),
                         )
                       };

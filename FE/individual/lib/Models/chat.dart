@@ -9,7 +9,7 @@ class Chat {
   final User user2;
   final String lastMessageBetween;
   DateTime lastlyViewed;
-  final String senderUsername;
+  String senderUsername;
   bool seen;
   final DateTime lastMessageSendTime;
 

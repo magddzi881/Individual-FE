@@ -64,7 +64,7 @@ class _EditOfferPageState extends State<EditOfferPage> {
     final double height = MediaQuery.of(context).size.height;
     final double width = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: background,
+      backgroundColor: backgroundColor,
       bottomNavigationBar: ButtonOneOption(
           navigatorBack: () {
             if (widget.fromProfile == true) {

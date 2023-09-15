@@ -121,7 +121,7 @@ class _ProfileDataPageState extends State<ProfileDataPage> {
                             initialLabelIndex: 2,
                             cornerRadius: 10,
                             activeFgColor: Colors.white,
-                            inactiveBgColor: Colors.white,
+                            inactiveBgColor: const Color(0xffE1ECC8),
                             inactiveFgColor: Colors.black,
                             totalSwitches: 3,
                             icons: const [
@@ -132,9 +132,9 @@ class _ProfileDataPageState extends State<ProfileDataPage> {
                             iconSize: height * 0.03,
                             borderColor: const [Colors.white],
                             activeBgColors: const [
-                              [Colors.deepPurpleAccent],
-                              [Colors.deepPurpleAccent],
-                              [Colors.deepPurpleAccent]
+                              [Color(0xff85A389)],
+                              [Color(0xff85A389)],
+                              [Color(0xff85A389)]
                             ],
                             onToggle: (index) {
                               switch (index) {
@@ -235,7 +235,7 @@ class _ProfileDataPageState extends State<ProfileDataPage> {
                                   }
                                 },
                                 style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.deepPurpleAccent,
+                                  backgroundColor: mainColor,
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(10.0),
                                   ),
@@ -314,8 +314,7 @@ class _ProfileDataPageState extends State<ProfileDataPage> {
                           child: Text(
                             'Sign in',
                             style: TextStyle(
-                                fontSize: height * 0.018,
-                                color: Colors.deepPurpleAccent),
+                                fontSize: height * 0.018, color: mainColor),
                           ),
                         )
                       ],

@@ -5,6 +5,7 @@ import 'package:individual/Database/chat_db.dart';
 import 'package:individual/Database/message_db.dart';
 import 'package:individual/Models/chat.dart';
 import 'package:individual/Models/message.dart';
+import 'package:individual/Models/user.dart';
 import 'package:individual/Widgets/chat_widgets.dart';
 import 'package:individual/Widgets/form_widgets.dart';
 import 'package:individual/Widgets/immutable_widgets.dart';
@@ -13,9 +14,13 @@ import 'package:individual/Utils/global_vars.dart';
 
 class ChatPreview extends StatefulWidget {
   const ChatPreview(
-      {super.key, required this.chat, required this.lastlyViewed});
+      {super.key,
+      required this.chat,
+      required this.lastlyViewed,
+      required this.loggedUser});
   final Chat chat;
   final DateTime lastlyViewed;
+  final User loggedUser;
 
   @override
   State<ChatPreview> createState() => _ChatPreviewState();
@@ -53,7 +58,7 @@ class _ChatPreviewState extends State<ChatPreview> {
     });
   }
 
-  Future<void> _refreshChat() async {
+  Future<void> refreshChat() async {
     setState(() {
       message = '';
       messageController.text = message;
@@ -67,7 +72,7 @@ class _ChatPreviewState extends State<ChatPreview> {
     final double height = MediaQuery.of(context).size.height;
     final double width = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: background,
+      backgroundColor: backgroundColor,
       body: SingleChildScrollView(
         child: Stack(children: [
           SizedBox(
@@ -129,9 +134,8 @@ class _ChatPreviewState extends State<ChatPreview> {
                                           horizontal: width * 0.02),
                                       padding: EdgeInsets.all(height * 0.014),
                                       decoration: BoxDecoration(
-                                        color: isUser1
-                                            ? Colors.deepPurpleAccent
-                                            : Colors.grey,
+                                        color:
+                                            isUser1 ? mainColor : Colors.grey,
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                       ),
@@ -172,21 +176,21 @@ class _ChatPreviewState extends State<ChatPreview> {
                     hintText: 'Type your message here',
                     controller: messageController,
                     showLabel: false,
-                    searchFunction: () {
+                    searchFunction: () async {
                       Message newMessage = Message(
                           chatId: widget.chat.id,
                           id: 0,
                           sendTime: DateTime.now(),
                           text: message,
                           receiverUsername: widget.chat.user2.username,
-                          senderUsername: widget.chat.user1.username);
-                      addMessage(newMessage).then((value) {
-                        widget.chat.lastlyViewed = widget.lastlyViewed;
-                        editChat(widget.chat, message, newMessage.sendTime);
-                        editChatSeen(widget.chat.id, false);
-                        setState(() {
-                          _refreshChat();
-                        });
+                          senderUsername: widget.loggedUser.username);
+                      await addMessage(newMessage);
+                      widget.chat.lastlyViewed = widget.lastlyViewed;
+                      widget.chat.senderUsername = widget.loggedUser.username;
+                      await editChat(widget.chat, message, newMessage.sendTime);
+                      await editChatSeen(widget.chat.id, false);
+                      setState(() {
+                        refreshChat();
                       });
                     },
                     function: (_) {
@@ -201,7 +205,7 @@ class _ChatPreviewState extends State<ChatPreview> {
             bottom: height * 0.14,
             right: width * 0.76,
             child: FloatingActionButton(
-              backgroundColor: Colors.deepPurpleAccent,
+              backgroundColor: mainColor,
               onPressed: () {
                 setState(() {
                   _scrollToBottom();

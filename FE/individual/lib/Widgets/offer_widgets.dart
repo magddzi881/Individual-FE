@@ -21,7 +21,7 @@ class CategoryIcon extends StatelessWidget {
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(10))),
         elevation: 0,
-        color: background,
+        color: backgroundColor,
         child: Icon(icon, color: color, size: height * size),
       ),
     );
@@ -38,6 +38,12 @@ class CategorySwitch extends StatelessWidget {
     IconData icon = Icons.abc_outlined;
 
     switch (category) {
+      case 'Add':
+        {
+          color = mainColor;
+          icon = Icons.add_chart_rounded;
+        }
+        break;
       case 'Mathematics':
         {
           color = Colors.black;
@@ -462,7 +468,7 @@ class ListItemFolded extends StatelessWidget {
                           child: ElevatedButton(
                             onPressed: onMessage,
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.deepPurpleAccent,
+                              backgroundColor: mainColor,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
@@ -666,7 +672,7 @@ class ListItemFoldedOwner extends StatelessWidget {
                           child: ElevatedButton(
                             onPressed: edit,
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.deepPurpleAccent,
+                              backgroundColor: mainColor,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10.0),
                               ),

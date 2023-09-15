@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:individual/Models/question.dart';
+import 'package:individual/Utils/global_vars.dart';
 
 class QuestionCard extends StatefulWidget {
   const QuestionCard(
@@ -50,9 +51,7 @@ class _QuestionCardState extends State<QuestionCard> {
               width: width * 0.9,
               height: height * 0.1,
               child: Card(
-                color: (widget.index == 1)
-                    ? Colors.deepPurpleAccent
-                    : Colors.white,
+                color: (widget.index == 1) ? mainColor : Colors.white,
                 elevation: 0,
                 shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(10))),
@@ -78,9 +77,7 @@ class _QuestionCardState extends State<QuestionCard> {
               width: width * 0.9,
               height: height * 0.1,
               child: Card(
-                color: (widget.index == 2)
-                    ? Colors.deepPurpleAccent
-                    : Colors.white,
+                color: (widget.index == 2) ? mainColor : Colors.white,
                 elevation: 0,
                 shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(10))),
@@ -106,9 +103,7 @@ class _QuestionCardState extends State<QuestionCard> {
               width: width * 0.9,
               height: height * 0.1,
               child: Card(
-                color: (widget.index == 3)
-                    ? Colors.deepPurpleAccent
-                    : Colors.white,
+                color: (widget.index == 3) ? mainColor : Colors.white,
                 elevation: 0,
                 shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(10))),
@@ -134,9 +129,7 @@ class _QuestionCardState extends State<QuestionCard> {
               width: width * 0.9,
               height: height * 0.1,
               child: Card(
-                color: (widget.index == 4)
-                    ? Colors.deepPurpleAccent
-                    : Colors.white,
+                color: (widget.index == 4) ? mainColor : Colors.white,
                 elevation: 0,
                 shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(10))),

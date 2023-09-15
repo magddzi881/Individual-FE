@@ -47,7 +47,7 @@ class _QuizPageState extends State<QuizPage> {
     final double height = MediaQuery.of(context).size.height;
     final double width = MediaQuery.of(context).size.width;
     return Scaffold(
-        backgroundColor: background,
+        backgroundColor: backgroundColor,
         body: Column(children: [
           const IndividualLogo(),
           FutureBuilder(

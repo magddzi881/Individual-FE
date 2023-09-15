@@ -91,10 +91,8 @@ SnackBar customSnackBar(String title, SnackBarType type, BuildContext context) {
           color: Colors.white),
     ),
     backgroundColor: (type == SnackBarType.success)
-        ? Colors.deepPurpleAccent
-        : ((type == SnackBarType.error)
-            ? Colors.pinkAccent
-            : Colors.lightBlueAccent),
+        ? mainColor
+        : ((type == SnackBarType.error) ? Colors.pinkAccent : secondaryColor),
     duration: const Duration(
       seconds: 2,
     ),
