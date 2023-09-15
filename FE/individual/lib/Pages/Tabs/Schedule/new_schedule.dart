@@ -76,22 +76,24 @@ class _NewSchedulePageState extends State<NewSchedulePage> {
                   String firstName = nameParts[2];
                   User user2 = await getUser(firstName);
                   addSchedule(Schedule(
-                      id: 0,
-                      user1: widget.user,
-                      user2: user2,
-                      category: category,
-                      end: endDate,
-                      start: startDate));
-                  ScaffoldMessenger.of(context).showSnackBar(customSnackBar(
-                      'Lesson added', SnackBarType.success, context));
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => MenuPage(
-                              user: widget.user,
-                              selectedIndex: 1,
-                            )),
-                  );
+                          id: 0,
+                          user1: widget.user,
+                          user2: user2,
+                          category: category,
+                          end: endDate,
+                          start: startDate))
+                      .then((value) {
+                    ScaffoldMessenger.of(context).showSnackBar(customSnackBar(
+                        'Lesson added', SnackBarType.success, context));
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => MenuPage(
+                                user: widget.user,
+                                selectedIndex: 1,
+                              )),
+                    );
+                  });
                 }
               }
             },

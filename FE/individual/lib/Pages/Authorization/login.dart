@@ -23,8 +23,8 @@ class _LoginPageState extends State<LoginPage> {
   TextEditingController usernameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   bool hideText = true;
-  String username = '';
-  String password = '';
+  String username = 'emp';
+  String password = 'ty';
 
   @override
   void dispose() {

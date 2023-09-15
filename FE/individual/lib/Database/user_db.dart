@@ -32,8 +32,44 @@ Future<User> getUser(String username) async {
     avatarIndex: 0,
     rating: 0.0,
   );
-  final response =
-      await http.get(Uri.parse('$url/users/$username'), headers: getHeaders);
+  final response = await http.get(Uri.parse('$url/users/old/$username'),
+      headers: getHeaders);
+  if (response.statusCode == 200) {
+    final Map<String, dynamic> userData = json.decode(response.body);
+    user = User(
+      username: userData['username'],
+      email: userData['email'],
+      password: '',
+      name: userData['name'],
+      surname: userData['surname'],
+      yearOfBirth: userData['yearOfBirth'],
+      gender: userData['gender'],
+      avatarIndex: userData['avatarIndex'],
+      rating: userData['rating'].toDouble(),
+    );
+  } else {}
+  return user;
+}
+
+Future<User> authUser(String username, String password) async {
+  User user = User(
+    username: '',
+    email: '',
+    password: 'xxx',
+    name: '',
+    surname: '',
+    yearOfBirth: '',
+    gender: '',
+    avatarIndex: 0,
+    rating: 0.0,
+  );
+  final response = await http.get(
+      Uri.parse('$url/users/$username?password=$password'),
+      headers: getHeaders);
+  print('$url/users/$username?password=$password');
+  print(response.statusCode);
+  print(response.body);
+
   if (response.statusCode == 200) {
     final Map<String, dynamic> userData = json.decode(response.body);
     user = User(
@@ -47,6 +83,9 @@ Future<User> getUser(String username) async {
       avatarIndex: userData['avatarIndex'],
       rating: userData['rating'].toDouble(),
     );
+  } else if (response.statusCode == 401) {
+    user.rating = -1;
+    return user;
   } else {}
   return user;
 }
@@ -94,8 +133,8 @@ Future<User> getUserYearOfBirth(String username) async {
     avatarIndex: 0,
     rating: 0.0,
   );
-  final response =
-      await http.get(Uri.parse('$url/users/$username'), headers: getHeaders);
+  final response = await http.get(Uri.parse('$url/users/old/$username'),
+      headers: getHeaders);
   if (response.statusCode == 200) {
     final Map<String, dynamic> userData = json.decode(response.body);
     user = User(

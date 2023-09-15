@@ -117,7 +117,7 @@ class _OffersPageState extends State<OffersPage> {
                       user1: widget.user,
                       user2: data[i].tutor,
                       lastlyViewed: DateTime.now(),
-                      senderUsername: data[i].tutor.username,
+                      senderUsername: widget.user.username,
                       lastMessageSendTime: DateTime.now(),
                       lastMessageBetween: exampleMessage);
                   Chat tempChat = await getChat(

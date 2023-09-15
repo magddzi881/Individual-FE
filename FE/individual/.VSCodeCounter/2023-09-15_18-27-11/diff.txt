@@ -1,0 +1,63 @@
+Date : 2023-09-15 18:27:11
+Directory : c:\Users\Lenovo\Desktop\Polsl\Inzynierka\FE\individual\lib
+Total : 25 files,  751 codes, 1 comments, 38 blanks, all 790 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| Dart     |         25 |        751 |          1 |         38 |        790 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++-------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                  | files      | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                     |         25 |        751 |          1 |         38 |        790 |
+| Database                                                                                              |          2 |         75 |          0 |         16 |         91 |
+| Models                                                                                                |          1 |         16 |          0 |          3 |         19 |
+| Pages                                                                                                 |         12 |        591 |          1 |         17 |        609 |
+| Pages (Files)                                                                                         |          1 |         36 |          0 |          0 |         36 |
+| Pages\Authorization                                                                                   |          4 |         -9 |          0 |          2 |         -7 |
+| Pages\Tabs                                                                                            |          7 |        564 |          1 |         15 |        580 |
+| Pages\Tabs (Files)                                                                                    |          2 |        201 |          0 |          6 |        207 |
+| Pages\Tabs\Chat                                                                                       |          1 |          4 |          0 |          0 |          4 |
+| Pages\Tabs\Home                                                                                       |          1 |          2 |          0 |          0 |          2 |
+| Pages\Tabs\Profile                                                                                    |          2 |         15 |          0 |          0 |         15 |
+| Pages\Tabs\Profile\Materials                                                                          |          2 |         15 |          0 |          0 |         15 |
+| Pages\Tabs\Schedule                                                                                   |          1 |        342 |          1 |          9 |        352 |
+| Utils                                                                                                 |          2 |          0 |          0 |          0 |          0 |
+| Widgets                                                                                               |          8 |         69 |          0 |          2 |         71 |
++-------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                                              | language | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| c:\Users\Lenovo\Desktop\Polsl\Inzynierka\FE\individual\lib\Database\schedule_db.dart                  | Dart     |         76 |          0 |         15 |         91 |
+| c:\Users\Lenovo\Desktop\Polsl\Inzynierka\FE\individual\lib\Database\user_db.dart                      | Dart     |         -1 |          0 |          1 |          0 |
+| c:\Users\Lenovo\Desktop\Polsl\Inzynierka\FE\individual\lib\Models\schedule.dart                       | Dart     |         16 |          0 |          3 |         19 |
+| c:\Users\Lenovo\Desktop\Polsl\Inzynierka\FE\individual\lib\Pages\Authorization\login.dart             | Dart     |         -4 |          0 |          0 |         -4 |
+| c:\Users\Lenovo\Desktop\Polsl\Inzynierka\FE\individual\lib\Pages\Authorization\profile_data.dart      | Dart     |         -1 |          0 |          0 |         -1 |
+| c:\Users\Lenovo\Desktop\Polsl\Inzynierka\FE\individual\lib\Pages\Authorization\register.dart          | Dart     |         -1 |          0 |          0 |         -1 |
+| c:\Users\Lenovo\Desktop\Polsl\Inzynierka\FE\individual\lib\Pages\Authorization\restore_password.dart  | Dart     |         -3 |          0 |          2 |         -1 |
+| c:\Users\Lenovo\Desktop\Polsl\Inzynierka\FE\individual\lib\Pages\Tabs\Chat\chat_preview.dart          | Dart     |          4 |          0 |          0 |          4 |
+| c:\Users\Lenovo\Desktop\Polsl\Inzynierka\FE\individual\lib\Pages\Tabs\Home\offers.dart                | Dart     |          2 |          0 |          0 |          2 |
+| c:\Users\Lenovo\Desktop\Polsl\Inzynierka\FE\individual\lib\Pages\Tabs\Profile\Materials\accesses.dart | Dart     |         20 |          0 |          0 |         20 |
+| c:\Users\Lenovo\Desktop\Polsl\Inzynierka\FE\individual\lib\Pages\Tabs\Profile\Materials\quiz.dart     | Dart     |         -5 |          0 |          0 |         -5 |
+| c:\Users\Lenovo\Desktop\Polsl\Inzynierka\FE\individual\lib\Pages\Tabs\Schedule\new_schedule.dart      | Dart     |        342 |          1 |          9 |        352 |
+| c:\Users\Lenovo\Desktop\Polsl\Inzynierka\FE\individual\lib\Pages\Tabs\chat.dart                       | Dart     |         21 |          0 |          0 |         21 |
+| c:\Users\Lenovo\Desktop\Polsl\Inzynierka\FE\individual\lib\Pages\Tabs\schedule.dart                   | Dart     |        180 |          0 |          6 |        186 |
+| c:\Users\Lenovo\Desktop\Polsl\Inzynierka\FE\individual\lib\Pages\menu.dart                            | Dart     |         36 |          0 |          0 |         36 |
+| c:\Users\Lenovo\Desktop\Polsl\Inzynierka\FE\individual\lib\Utils\functions.dart                       | Dart     |         -2 |          0 |          0 |         -2 |
+| c:\Users\Lenovo\Desktop\Polsl\Inzynierka\FE\individual\lib\Utils\global_vars.dart                     | Dart     |          2 |          0 |          0 |          2 |
+| c:\Users\Lenovo\Desktop\Polsl\Inzynierka\FE\individual\lib\Widgets\button_widgets.dart                | Dart     |          1 |          0 |          0 |          1 |
+| c:\Users\Lenovo\Desktop\Polsl\Inzynierka\FE\individual\lib\Widgets\chat_widgets.dart                  | Dart     |          8 |          0 |          0 |          8 |
+| c:\Users\Lenovo\Desktop\Polsl\Inzynierka\FE\individual\lib\Widgets\form_widgets.dart                  | Dart     |          1 |          0 |          0 |          1 |
+| c:\Users\Lenovo\Desktop\Polsl\Inzynierka\FE\individual\lib\Widgets\immutable_widgets.dart             | Dart     |          2 |          0 |          0 |          2 |
+| c:\Users\Lenovo\Desktop\Polsl\Inzynierka\FE\individual\lib\Widgets\offer_widgets.dart                 | Dart     |          6 |          0 |          0 |          6 |
+| c:\Users\Lenovo\Desktop\Polsl\Inzynierka\FE\individual\lib\Widgets\profile_widgets.dart               | Dart     |        -12 |          0 |          0 |        -12 |
+| c:\Users\Lenovo\Desktop\Polsl\Inzynierka\FE\individual\lib\Widgets\quiz_widgets.dart                  | Dart     |        -16 |          0 |         -1 |        -17 |
+| c:\Users\Lenovo\Desktop\Polsl\Inzynierka\FE\individual\lib\Widgets\schedule_widgets.dart              | Dart     |         79 |          0 |          3 |         82 |
+| Total                                                                                                 |          |        751 |          1 |         38 |        790 |
++-------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+

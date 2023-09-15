@@ -102,8 +102,8 @@ SnackBar customSnackBar(String title, SnackBarType type, BuildContext context) {
 
 Future<bool> logIn(String username, String password) async {
   bool auth = false;
-  User user = await getUserPassword(username);
-  if (password == user.password) {
+  User user = await authUser(username, password);
+  if (username == user.username && user.rating != -1) {
     auth = true;
   }
   return auth;
