@@ -18,14 +18,12 @@ class AccessPage extends StatefulWidget {
 }
 
 class _AccessPageState extends State<AccessPage> {
-  late Future<List<Access>> accesses;
-  late Future<List<User>> chats;
+  late Future<List<dynamic>> dynamics;
   late User toUser;
   @override
   void initState() {
-    accesses = getAccessesByMaterialId(widget.studyMaterialId);
-    chats =
-        getUniqueAccesses(widget.studyMaterialId, widget.loggedUser.username);
+    dynamics =
+        getAccessesAndUsers(widget.loggedUser.username, widget.studyMaterialId);
     super.initState();
   }
 
@@ -41,32 +39,53 @@ class _AccessPageState extends State<AccessPage> {
       body: Column(
         children: [
           const IndividualLogo(),
-          Text(
-            "Assigned accesses",
-            style: TextStyle(fontSize: height * 0.02),
-            textAlign: TextAlign.start,
-          ),
           SizedBox(
-              height: height * 0.4,
+              height: height * 0.75,
               width: width,
               child: FutureBuilder(
-                future: accesses,
+                future: dynamics,
                 builder: (context, snapshot) {
                   if (snapshot.connectionState == ConnectionState.waiting) {
                     return const Loading();
                   } else {
                     if (snapshot.hasData && snapshot.data!.isNotEmpty) {
-                      return ListView.builder(
-                        itemCount: snapshot.data?.length,
-                        itemBuilder: (context, index) {
-                          return AccessTile(
-                            userTo: snapshot.data![index].to,
-                            loggedUser: widget.loggedUser,
-                            accesId: snapshot.data![index].id,
-                            studyMaterialId: widget.studyMaterialId,
-                            hasAccess: true,
-                          );
-                        },
+                      List<Access> accesses = [];
+                      List<User> users = [];
+                      for (var element in snapshot.data!) {
+                        if (element is Access) {
+                          accesses.add(element);
+                        } else if (element is User) {
+                          users.add(element);
+                        }
+                      }
+                      return Column(
+                        children: [
+                          SizedBox(
+                            width: width,
+                            height: height * 0.75,
+                            child: ListView.builder(
+                              itemBuilder: (context, index) {
+                                if (index < accesses.length) {
+                                  return AccessTile(
+                                    userTo: accesses[index].to,
+                                    loggedUser: widget.loggedUser,
+                                    accesId: accesses[index].id,
+                                    studyMaterialId: widget.studyMaterialId,
+                                    hasAccess: true,
+                                  );
+                                } else {
+                                  int uIndex = index - accesses.length;
+                                  return AccessTile(
+                                    userTo: users[uIndex],
+                                    loggedUser: widget.loggedUser,
+                                    studyMaterialId: widget.studyMaterialId,
+                                  );
+                                }
+                              },
+                              itemCount: accesses.length + users.length,
+                            ),
+                          ),
+                        ],
                       );
                     } else {
                       return Center(
@@ -85,48 +104,6 @@ class _AccessPageState extends State<AccessPage> {
                   }
                 },
               )),
-          Text(
-            "Unassigned accesses",
-            style: TextStyle(fontSize: height * 0.02),
-            textAlign: TextAlign.start,
-          ),
-          SizedBox(
-              height: height * 0.3,
-              width: width,
-              child: FutureBuilder(
-                future: chats,
-                builder: (context, snapshot) {
-                  if (snapshot.connectionState == ConnectionState.waiting) {
-                    return const Loading();
-                  } else {
-                    if (snapshot.hasData && snapshot.data!.isNotEmpty) {
-                      return ListView.builder(
-                        itemCount: snapshot.data!.length,
-                        itemBuilder: (context, index) {
-                          return AccessTile(
-                            userTo: snapshot.data![index],
-                            loggedUser: widget.loggedUser,
-                            studyMaterialId: widget.studyMaterialId,
-                          );
-                        },
-                      );
-                    } else {
-                      return Center(
-                          child: SizedBox(
-                        width: width * 0.7,
-                        child: Text(
-                          'There is nothing here.',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              fontSize: height * 0.024,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.grey),
-                        ),
-                      ));
-                    }
-                  }
-                },
-              ))
         ],
       ),
     );

@@ -24,10 +24,9 @@ class AccessTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final double height = MediaQuery.of(context).size.height;
     final double width = MediaQuery.of(context).size.width;
-    return Container(
+    return SizedBox(
       height: height * 0.1,
       width: width,
-      color: Colors.amber,
       child: Card(
         elevation: 0,
         margin: const EdgeInsets.all(0),

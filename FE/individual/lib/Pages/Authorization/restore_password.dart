@@ -145,9 +145,9 @@ class _RestorePasswordPageState extends State<RestorePasswordPage> {
                                       await restoreCheck(username, yearOfBirth);
                                   if (correctData == true) {
                                     User user = await getUser(username);
-                                    print(user.password);
+
                                     user.password = password;
-                                    print(user.password);
+
                                     await editUser(user);
                                     ScaffoldMessenger.of(context).showSnackBar(
                                         customSnackBar(

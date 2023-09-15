@@ -124,3 +124,18 @@ Future<bool> deleteAccessById(int accesId) async {
     return false;
   }
 }
+
+Future<List<dynamic>> getAccessesAndUsers(
+    String username, int studyMaterialId) async {
+  Future<List> accesses = getAccessesByMaterialId(studyMaterialId);
+  Future<List> chats = getUniqueAccesses(studyMaterialId, username);
+
+  List<List> resultList = await Future.wait([accesses, chats]);
+
+  List<dynamic> combinedList = [];
+  for (var result in resultList) {
+    combinedList.addAll(result);
+  }
+
+  return combinedList;
+}
